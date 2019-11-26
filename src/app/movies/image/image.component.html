@@ -1,0 +1,9 @@
+<div>
+  <div *ngIf="image">
+    <img [src]="image.url" [alt]="image.filename" class="card-img-top">
+  </div>
+
+  <div *ngIf="!image">
+    <div class="card-img-top bg-secondary py-5 text-center">Empty image!</div>
+  </div>
+</div>

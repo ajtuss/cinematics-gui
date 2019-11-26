@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h3>Cinematics</h3>
+
+  <div class="card">
+    <app-header></app-header>
+    <div *ngIf="page" class="card-body card-columns">
+      <div *ngFor="let movie of page.content" class="card">
+        <app-image [image]="movie.image"></app-image>
+        <div class="card-body">
+          <h5 class="card-title">{{movie.name}}</h5>
+          <p class="card-text">{{movie.description}}</p>
+          <div class="d-flex justify-content-end">
+            <a href="#" class="btn btn-primary mr-2">Edit</a>
+            <a (click)="delete(movie)" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-pagination
+      [page]="page"
+      (nextPageEvent)="getNextPage()"
+      (previousPageEvent)="getPreviousPage()"
+      class="card-footer">
+    </app-pagination>
+  </div>
+</div>

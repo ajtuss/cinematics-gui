@@ -1,0 +1,18 @@
+<div *ngIf="page" class="d-flex justify-content-end">
+  <div>
+    <div class="align-self-center text-muted">Elements per page: {{page.size}}</div>
+    <div>
+      <span class="align-self-center ml-auto mb-1 text-muted">
+      Shows {{from()}} to {{to()}} of total {{page.totalElements}}
+      </span>
+      <a class="btn btn-outline" [ngClass]="{'disabled': page.first }"
+         [routerLink]="" (click)="previousPage()">
+        <i class="material-icons">chevron_left</i>
+      </a>
+      <a class="btn btn-outline" [ngClass]="{'disabled': page.last }"
+         [routerLink]="" (click)="nextPage()">
+        <i class="material-icons">chevron_right</i>
+      </a>
+    </div>
+  </div>
+</div>
