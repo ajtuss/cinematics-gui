@@ -3,9 +3,6 @@ import {MoviesService} from './movies.service';
 import {Page} from '../pagination/models/page';
 import {PaginationService} from '../pagination/pagination.service';
 import {Movie} from './movie';
-import {FormControl} from '@angular/forms';
-import {debounceTime, startWith, switchMap} from 'rxjs/operators';
-import {log} from 'util';
 
 @Component({
   selector: 'app-movies',
